@@ -1,0 +1,108 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #212121;
+    border-bottom: 2px solid #333;
+}
+
+header h1 {
+    font-size: 2.2rem;
+    color: #f2f2f2;
+}
+
+header button {
+    background-color: #5e5ce6;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+header button:hover {
+    background-color: #7b79f2;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 40px;
+}
+
+main > button {
+    background-color: #1f8ef1;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-bottom: 40px;
+    transition: background-color 0.3s ease;
+}
+
+main > button:hover {
+    background-color: #4fa7f5;
+}
+
+#grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 15px;
+    max-width: 500px;
+    width: 100%;
+    justify-items: center;
+}
+
+#card {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+#card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+    transform-style: preserve-3d;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+#card-inner.flipped {
+    transform: rotateY(180deg);
+}
+
+#card-front,
+#card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    border: 2px solid #444;
+}
+
+#card-front {
+    background-color: #fafafa;
+}
+
+#card-back {
+    transform: rotateY(180deg);
+}

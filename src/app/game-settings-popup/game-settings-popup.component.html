@@ -1,0 +1,20 @@
+<div class="popup-overlay">
+  <div class="popup-window">
+    <h1>Game Settings</h1>
+
+    <p>Choose the number of cards</p>
+    <input 
+      type="range"
+      id="cardsAmount"
+      name="cardsAmount"
+      min="2"
+      max="24"
+      [(ngModel)]="cardsAmount" 
+      (focus) = "amountRangeFocus()"
+      (blur)="amountRangeBlur()"/>
+    <label for="width">{{ cardsAmount }}</label>
+
+    <button (click)="closeGameSettings()">Save and close</button>
+
+  </div>
+</div>
