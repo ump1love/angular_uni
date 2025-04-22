@@ -111,6 +111,8 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   gameStartButton(): void {
+    this.correctCards = 0;
+
     if (this.cardsAmount === 0) {
       this.snackBar.open('Please select a wanted amount of cards in the settings menu first!', 'OK', {
         duration: 2500,
